@@ -179,6 +179,38 @@ export default function Hero() {
           <span className="ha-cta-arrow ha-cta-arrow--right">→</span>
         </a>
       </motion.div>
+
+      {/* ── scroll hint ── */}
+      <motion.a
+        href="#work"
+        style={{
+          position: "absolute",
+          bottom: 28,
+          left: "50%",
+          translateX: "-50%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: 6,
+          opacity: titleOpacity,
+          textDecoration: "none",
+          cursor: "pointer",
+        }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2.0, duration: 1 }}
+      >
+        <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.18em", color: "rgba(184,149,106,0.5)" }}>
+          SCROLL
+        </span>
+        <motion.div
+          style={{ color: "rgba(184,149,106,0.55)", fontSize: 18, lineHeight: 1 }}
+          animate={{ y: [0, 5, 0] }}
+          transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+        >
+          ↓
+        </motion.div>
+      </motion.a>
     </div>
   );
 }
